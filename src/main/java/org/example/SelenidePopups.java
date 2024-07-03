@@ -26,6 +26,7 @@ public class SelenidePopups {
     alert.accept();
 
 
+
     //Handle if using WebDriverRunner
 
 //    SelenideElement element= $(By.xpath("//a[contains(text(),'Popups')]"));
@@ -39,5 +40,15 @@ public class SelenidePopups {
 //    Thread.sleep(3000);
 //    alert.accept();
 
+}
+@Test
+public void authAlert() throws InterruptedException {
+    open("https://practice-automation.com/popups/");
+    $(By.xpath("//button[@id = 'prompt']")).click();
+    Alert alert = switchTo().alert();
+    alert.sendKeys("Hello");
+    Thread.sleep(3000);
+   alert.accept();
+  // open("","","","");
 }
 }
